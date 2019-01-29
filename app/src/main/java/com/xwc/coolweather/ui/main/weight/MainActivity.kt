@@ -1,4 +1,4 @@
-package com.xwc.coolweather.ui.weight
+package com.xwc.coolweather.ui.main.weight
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle

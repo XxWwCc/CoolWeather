@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <litepal>
     <dbname value="cool_weather"/>
     <version value="1" />
@@ -10,7 +9,3 @@
         <mapping class="com.xwc.coolweather.bean.County"/>
     </list>
 </litepal>
-=======
-<resources>
-</resources>
->>>>>>> 5079faa47d8dd8417503416f91d8c4fddc0f1913

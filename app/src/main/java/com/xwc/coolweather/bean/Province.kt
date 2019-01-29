@@ -8,9 +8,9 @@ import org.litepal.crud.DataSupport
  * 2019/1/29 10:28
  */
 class Province : DataSupport() {
-    var id: Int? = null
-    var provinceName: String? = null
-    var provinceCode: Int? = null
+    var id: Int = -1
+    var provinceName: String = ""
+    var provinceCode: Int = -1
 
     override fun toString(): String {
         return "Province(id=$id, provinceName=$provinceName, provinceCode=$provinceCode)"
