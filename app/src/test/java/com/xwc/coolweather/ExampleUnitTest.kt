@@ -1,4 +1,4 @@
-package com.qcloud.coolweather
+package com.xwc.coolweather
 
 import org.junit.Test
 

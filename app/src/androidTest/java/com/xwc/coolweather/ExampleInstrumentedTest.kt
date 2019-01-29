@@ -1,4 +1,4 @@
-package com.qcloud.coolweather
+package com.xwc.coolweather
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

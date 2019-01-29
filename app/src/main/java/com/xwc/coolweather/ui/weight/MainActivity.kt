@@ -1,8 +1,8 @@
-package com.qcloud.coolweather.ui.weight
+package com.xwc.coolweather.ui.weight
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.qcloud.coolweather.R
+import com.xwc.coolweather.R
 
 class MainActivity : AppCompatActivity() {
 
