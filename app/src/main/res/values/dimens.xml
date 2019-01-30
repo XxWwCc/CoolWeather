@@ -5,6 +5,10 @@
     <dimen name="text_size">16sp</dimen>
     <dimen name="radius_size">12dp</dimen>
     <dimen name="btn_text_size">18sp</dimen>
+    <dimen name="aqi_size">40sp</dimen>
+    <dimen name="air_temperature_size">60sp</dimen>
+
+    <dimen name="layout_margin">15dp</dimen>
 
     <dimen name="margin_1">4dp</dimen>
     <dimen name="margin_2">8dp</dimen>

@@ -12,6 +12,8 @@ import com.xwc.coolweather.bean.City
 import com.xwc.coolweather.bean.County
 import com.xwc.coolweather.bean.Province
 import com.xwc.coolweather.enums.LevelEnum
+import com.xwc.coolweather.enums.LinkEnum
+import com.xwc.coolweather.ui.weather.weight.WeatherActivity
 import com.xwc.coolweather.util.HttpUtil
 import com.xwc.coolweather.util.Utility
 import com.xwc.coolweather.weight.LoadingDialog
@@ -70,6 +72,10 @@ class ChooseAreaFragment : Fragment() {
             } else if (currentLevel == LevelEnum.LEVEL_CITY) {
                 selectedCity = cityList[position]
                 queryCounties()
+            } else {
+                val weatherId = countyList[position].weatherId
+                WeatherActivity.openActivity(mContext!!, weatherId)
+                activity?.finish()
             }
         }
         backButton?.setOnClickListener{
@@ -98,7 +104,8 @@ class ChooseAreaFragment : Fragment() {
             listView?.setSelection(0)
             currentLevel = LevelEnum.LEVEL_PROVINCE
         } else {
-            val address = "http://guolin.tech/api/china"
+            val address = LinkEnum.LINK_CHINA
+            Timber.e("address:$address")
             queryFromServer(address, LevelEnum.LEVEL_PROVINCE)
         }
     }
@@ -120,7 +127,8 @@ class ChooseAreaFragment : Fragment() {
             listView?.setSelection(0)
             currentLevel = LevelEnum.LEVEL_CITY
         } else {
-            val address = "http://guolin.tech/api/china/${selectedProvince.provinceCode}"
+            val address = "${LinkEnum.LINK_CHINA}/${selectedProvince.provinceCode}"
+            Timber.e("address:$address")
             queryFromServer(address, LevelEnum.LEVEL_CITY)
         }
     }
@@ -141,7 +149,8 @@ class ChooseAreaFragment : Fragment() {
             listView?.setSelection(0)
             currentLevel = LevelEnum.LEVEL_COUNTY
         } else {
-            val address = "http://guolin.tech/api/china/${selectedProvince.provinceCode}/${selectedCity.cityCode}"
+            val address = "${LinkEnum.LINK_CHINA}/${selectedProvince.provinceCode}/${selectedCity.cityCode}"
+            Timber.e("address:$address")
             queryFromServer(address, LevelEnum.LEVEL_COUNTY)
         }
     }

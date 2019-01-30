@@ -1,11 +1,14 @@
 package com.xwc.coolweather.util
 
+import com.google.gson.Gson
 import com.xwc.coolweather.bean.City
 import com.xwc.coolweather.bean.County
 import com.xwc.coolweather.bean.Province
+import com.xwc.coolweather.gson.WeatherBean
 import org.json.JSONArray
 import org.json.JSONException
-import timber.log.Timber
+import org.json.JSONObject
+import java.lang.Exception
 
 /**
  * Description：处理返回json数据
@@ -75,5 +78,20 @@ object Utility {
             }
         }
         return false
+    }
+
+    /**
+     * 将返回的JSON数据解析成 Weather 实体类
+     * */
+    fun handleWeatherResponse(response: String): WeatherBean? {
+        try {
+            val jsonObject = JSONObject(response)
+            val jsonArray = jsonObject.getJSONArray("HeWeather")
+            val weatherContent = jsonArray.getJSONObject(0).toString()
+            return Gson().fromJson(weatherContent, WeatherBean::class.java)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return null
     }
 }

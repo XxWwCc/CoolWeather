@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">酷欧天气</string>
+    <string name="text_prediction">预报</string>
+    <string name="text_air_quality">空气质量</string>
+    <string name="text_aqi_index">AQI指数</string>
+    <string name="text_pm25_index">PM2.5指数</string>
+    <string name="text_lift_suggestion">生活建议</string>
 </resources>
